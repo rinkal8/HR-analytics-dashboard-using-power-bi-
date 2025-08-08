@@ -65,7 +65,9 @@ Average Salary = AVERAGE(Employee[Salary])
 Average Age = AVERAGE(Employee[Age])
 
 Years at Company = AVERAGE(Employee[YearsAtCompany])
+```
 
+---
 
 ## 📈 Dashboard Design
 
@@ -79,27 +81,28 @@ Years at Company = AVERAGE(Employee[YearsAtCompany])
 
 ### 🔹 Key KPIs (Top Summary Tiles)
 
-| Metric             | Value    |
-|--------------------|----------|
-| Total Employees    | 1,473    |
-| Attrition Count    | 237      |
-| Attrition Rate     | 16.1%    |
-| Average Age        | 37 years |
-| Average Salary     | ₹6.5K    |
-| Avg. Tenure        | 7 years  |
+| Metric           | Value     |
+|------------------|-----------|
+| Total Employees  | 1,473     |
+| Attrition Count  | 237       |
+| Attrition Rate   | 16.1%     |
+| Average Age      | 37 years  |
+| Average Salary   | ₹6.5K     |
+| Avg. Tenure      | 7 years   |
 
 ---
 
 ## 📊 Visualizations Used
 
-| Visual Type        | Description                                      |
-|--------------------|--------------------------------------------------|
-| Bar Charts         | Attrition by Age, Salary Slab, Job Role          |
-| Donut Chart        | Attrition by Education                           |
-| Line Chart         | Attrition by Years at Company                    |
-| Clustered Column   | Attrition by Gender                              |
-| Matrix Table       | Attrition by Job Role & Tenure Period            |
-| Slicer Buttons     | Department-wise interactive filtering            |
+| Visual Type              | Description                                      |
+|--------------------      |--------------------------------------------------|
+| Stacked Bar Chart        | Attrition by Job Role and Salary Slab            |
+| Stacked Column Chart     | Attrition by Age Group                           |
+| Donut Chart              | Attrition by Education                           |
+| Area Chart               | Attrition by Years at Company                    |
+| Tree Map                 | Attrition by Gender                              |
+| Matrix                   | Attrition by Job Role & Job Satisfaction         |
+| Slicer Buttons           | Department-wise interactive filtering            |
 
 ---
 
@@ -111,17 +114,7 @@ Years at Company = AVERAGE(Employee[YearsAtCompany])
 - Employees with **Life Sciences education** (38%) showed highest attrition  
 - **Salary bracket up to ₹5K** had the most attrition cases (163 employees)  
 - Employees typically left after **1 year of service** (59 cases)  
-- **Male attrition (140)** was higher than **female attrition (79)**  
-
----
-
-### ✳️ Job Role Insights
-
-| Job Role               | Attrition Count |
-|------------------------|-----------------|
-| Laboratory Technician  | 62              |
-| Sales Executive        | 57              |
-| Research Scientist     | 47              |
+- **Male attrition (140)** was higher than **female attrition (79)**
 
 ---
 
@@ -158,4 +151,4 @@ Years at Company = AVERAGE(Employee[YearsAtCompany])
 
 ## 📷 Dashboard Preview
 
-> ![Dashboard Preview](images/hr-dashboard-preview.png)
+> ![Dashboard Preview](Dashboard-Screenshots/dashboard-overview.png)
