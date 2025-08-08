@@ -1,92 +1,161 @@
-# 🧠 HR Analytics Dashboard | Power BI Project
+# 📊 HR Analytics Dashboard – Power BI Portfolio Project
 
-> 📊 An interactive Power BI dashboard built to analyze employee attrition trends, helping HR professionals make data-driven decisions to improve employee retention and satisfaction.
+## 🎯 Project Objective
 
-## 🚀 Objective
-To visualize and analyze HR data, identify key attrition drivers, and derive strategic insights for improving employee retention across departments like HR, R&D, and Sales.
+To create a comprehensive and interactive **HR Analytics Dashboard** in Power BI that provides **actionable insights into employee attrition patterns**, aiming to:
 
-## 📁 Dataset & Source
-- Source: HR management system export (sample dataset)
-- Fields include: Employee ID, Age, Education, Gender, Job Role, Salary, Years at Company, Attrition
+- Improve employee retention  
+- Streamline recruitment strategies  
+- Elevate workforce satisfaction and performance  
 
-## 🔧 Tools & Technologies
-- Power BI Desktop  
-- Power Query  
-- DAX (Data Analysis Expressions)
+---
 
-## 📊 Key Metrics & KPIs
+## 🔧 Tools Used
 
-| Metric               | Value    |
-|----------------------|----------|
-| Total Employees      | 1,473    |
-| Attrition Count      | 237      |
-| Attrition Rate       | 16.1%    |
-| Average Age          | 37 years |
-| Average Salary       | ₹6.5K    |
-| Avg. Tenure          | 7 years  |
+- **Power BI Desktop**  
+- **Power Query Editor**  
+- **DAX (Data Analysis Expressions)**  
 
-## 📈 Visualizations Used
+---
 
-- ✅ Bar Chart: Attrition by Age, Job Role, Salary
-- ✅ Donut Chart: Attrition by Education
-- ✅ Line Chart: Years at Company vs Attrition
-- ✅ Matrix: Job Role by Age Group
-- ✅ Slicers: Department, Gender, Salary Slab
+## 🧩 Project Workflow Overview
 
-## 💡 Insights Derived
+### 1️⃣ Data Collection
 
-1. Highest attrition among 26–35 age group and salary < ₹5K.
-2. Laboratory Technicians and Sales Executives show the most attrition.
-3. Most employees leave after ~1 year at the company.
-4. Life Sciences graduates have the highest attrition rate (38%).
-5. Attrition is slightly higher among male employees.
+The dataset was sourced from the **HR Management System**, comprising the following details:
 
-## 🧠 DAX Measures
+- Employee demographics  
+- Job roles  
+- Education  
+- Salary  
+- Tenure  
+- Attrition data  
 
-```DAX
+---
+
+### 2️⃣ Data Cleaning & Preparation (Power Query)
+
+All preprocessing was performed in **Power BI's Power Query Editor**, including:
+
+- Removed irrelevant and duplicate records  
+- Renamed ambiguous columns for better clarity  
+- Converted data types:
+  - Age → Whole Number  
+  - Salary → Decimal Number  
+- Created derived columns:
+  - **Salary Slabs** (e.g., Up to ₹5K, ₹5K–10K, etc.)  
+  - **Age Groups** (e.g., 18–25, 26–35, etc.)  
+  - **Years at Company Buckets**
+
+---
+
+### 3️⃣ Data Modeling & DAX Calculations
+
+Custom DAX measures and columns were created to support **dynamic KPIs**:
+
+```dax
 Total Employees = DISTINCTCOUNT(Employee[EmployeeID])
+
 Attrition Count = COUNTROWS(FILTER(Employee, Employee[Attrition] = "Yes"))
+
 Attrition Rate = DIVIDE([Attrition Count], [Total Employees], 0)
+
 Average Salary = AVERAGE(Employee[Salary])
+
 Average Age = AVERAGE(Employee[Age])
+
 Years at Company = AVERAGE(Employee[YearsAtCompany])
-```
 
-🔗 See [`DAX-Codes/measures.md`](./DAX-Codes/measures.md) for full list.
 
-## 🎯 Recommendations
+## 📈 Dashboard Design
 
-- Provide career paths for 26–35 age group.
-- Increase salaries for high-attrition, low-paid roles.
-- Enhance onboarding and first-year engagement.
-- Improve flexibility and work-life balance for single employees.
+### 🔹 Dashboard Highlights
 
-## 📂 Folder Contents
+- Professional and clean color theme for executive readability  
+- Interactive **Department Filter**: HR, Research & Development, Sales  
+- Uniform chart formatting with **tooltips for additional insights**
 
-| Folder/File              | Description                                  |
-|--------------------------|----------------------------------------------|
-| `Dashboard-Screenshots/` | Visual previews of the dashboard             |
-| `PowerBI-File/`          | `.pbix` file for Power BI                    |
-| `DAX-Codes/`             | All measures and formulas used               |
-| `Assets/`                | Original PDF report or exports               |
+---
 
-## ✅ Lessons Learned
+### 🔹 Key KPIs (Top Summary Tiles)
 
-- End-to-end Power BI project setup
-- Power Query data cleaning & shaping
-- Creating measures using DAX
-- Designing interactive dashboards with slicers & tooltips
-- Extracting and communicating business insights
+| Metric             | Value    |
+|--------------------|----------|
+| Total Employees    | 1,473    |
+| Attrition Count    | 237      |
+| Attrition Rate     | 16.1%    |
+| Average Age        | 37 years |
+| Average Salary     | ₹6.5K    |
+| Avg. Tenure        | 7 years  |
 
-## 📸 Preview
+---
 
-![Dashboard Overview](./Dashboard-Screenshots/dashboard-overview.png)
+## 📊 Visualizations Used
 
-## 📄 License
+| Visual Type        | Description                                      |
+|--------------------|--------------------------------------------------|
+| Bar Charts         | Attrition by Age, Salary Slab, Job Role          |
+| Donut Chart        | Attrition by Education                           |
+| Line Chart         | Attrition by Years at Company                    |
+| Clustered Column   | Attrition by Gender                              |
+| Matrix Table       | Attrition by Job Role & Tenure Period            |
+| Slicer Buttons     | Department-wise interactive filtering            |
 
-This project is for educational and portfolio purposes only. No sensitive or private data has been used.
+---
 
-## ✨ Author
+## 🔍 Insights & Analysis
 
-Rinkal Gajera  
-📧 [LinkedIn Profile](#) | 🌐 [Portfolio Website](#)
+### ✳️ General Attrition Trends
+
+- Highest attrition occurred in the **26–35 age group** (116 employees)  
+- Employees with **Life Sciences education** (38%) showed highest attrition  
+- **Salary bracket up to ₹5K** had the most attrition cases (163 employees)  
+- Employees typically left after **1 year of service** (59 cases)  
+- **Male attrition (140)** was higher than **female attrition (79)**  
+
+---
+
+### ✳️ Job Role Insights
+
+| Job Role               | Attrition Count |
+|------------------------|-----------------|
+| Laboratory Technician  | 62              |
+| Sales Executive        | 57              |
+| Research Scientist     | 47              |
+
+---
+
+## 🎯 Recommendations for HR Strategy
+
+- **Career Development Programs**: Especially for the 26–35 age group  
+- **Salary Review**: Enhance pay structure for employees under ₹5K  
+- **Retention Programs**: Focus on onboarding and first-year experience  
+- **High-Attrition Roles**: Create initiatives for Sales Executives & Lab Technicians  
+- **Gender-Specific Interventions**: Explore factors behind higher male attrition  
+- **Flexible Work Policies**: Support new or single employees better  
+
+---
+
+## 🚧 Challenges Faced
+
+| Area              | Description                                                  |
+|-------------------|--------------------------------------------------------------|
+| Data Quality      | Incomplete or inconsistent records required heavy cleaning   |
+| DAX Complexity    | Designing custom KPIs and conditional metrics was complex    |
+| Clarity in Visuals| Balancing multiple filters, departments, and metrics cleanly |
+
+---
+
+## ✅ Key Skills Demonstrated
+
+- **Power BI**: Data Import, Modeling, Visualization  
+- **Power Query**: Data Cleaning, M Code Transformation  
+- **DAX**: Measure & Column Creation, Time Intelligence Functions  
+- **Dashboard UX**: Filters, Slicers, Tooltips, Interactivity  
+- **Insight Generation**: Business-driven insights and recommendations  
+
+---
+
+## 📷 Dashboard Preview
+
+> ![Dashboard Preview](images/hr-dashboard-preview.png)
